@@ -73,7 +73,22 @@ class Commands {
             return;
         }
 
-        const result = this.formatNumberDecimal(diceCount * diceType);
+        if (diceCount < 1 || diceCount > 100) {
+            message.reply('You can roll 1-100 dies at the same time.');
+            return;
+        }
+
+        if (diceType < 1 || diceType > 10000) {
+            message.reply('The die types you can roll is 1-10000.');
+            return;
+        }
+
+        let numberResult = 0;
+        for (var i = diceCount; i > 0; i--) {
+            numberResult += this.between(1, diceType);
+        }
+
+        const result = this.formatNumberDecimal(numberResult);
 
         const rollResults = new RichEmbed()
             // Set the title of the field
