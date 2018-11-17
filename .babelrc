@@ -13,20 +13,10 @@
     ],
     "env": {
         "development": {
-            "plugins": [
-                ["module-resolver", {
-                    "root": ["./"],
-                    "alias": {}
-                }]
-            ]
+            "plugins": []
         },
         "production": {
-            "plugins": [
-                ["module-resolver", {
-                    "root": ["./"],
-                    "alias": {}
-                }]
-            ]
+            "plugins": []
         }
     }
 }

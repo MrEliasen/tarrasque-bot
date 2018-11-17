@@ -7,8 +7,8 @@
     "modules": true
   },
   "env": {
-    "browser": false,
-    "node": true
+    "browser": true,
+    "node": false
   },
   "parser": "babel-eslint",
   "rules": {
