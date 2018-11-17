@@ -1,12 +1,13 @@
 import dotenv from 'dotenv';
 import Discord from 'discord.js';
-//import Logger from './components/logger';
-import Commands from './components/commands';
+import Commands from './commands';
 
-// load .env file
-const dotloaded = dotenv.config();
-if (dotloaded.error) {
-    throw new Error(dotloaded.error);
+if (process.env.NODE_ENV === 'development') {
+    // load .env file
+    const dotloaded = dotenv.config();
+    if (dotloaded.error) {
+        throw new Error(dotloaded.error);
+    }
 }
 
 // Create the bot
