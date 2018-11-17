@@ -1,6 +1,12 @@
 import {RichEmbed} from 'discord.js';
 
+/**
+ * The commands class
+ */
 class Commands {
+    /**
+     * Class constructor
+     */
     constructor() {
     }
 
@@ -34,6 +40,10 @@ class Commands {
         );
     }
 
+    /**
+     * Parses messages from discord
+     * @param  {DiscordJS Message} message
+     */
     parse = (message) => {
         // Dice roll
         // /roll 2d4
@@ -43,6 +53,10 @@ class Commands {
         }
     }
 
+    /**
+     * The /roll xDy command
+     * @param  {DiscordJS Message} message
+     */
     cmdDice(message) {
         const errorMsg = 'The command is: `/roll xdy` or `/roll x d y`, where x is the number of dies to roll, and y being the type of die. Eg: `/roll 4d6`';
         let rollString = message.content.trim().toLowerCase();
