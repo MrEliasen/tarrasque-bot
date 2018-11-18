@@ -111,7 +111,7 @@ class Commands {
             "You regain all expended sorcery points.",
         ];
 
-        let rollIndex = between(1, 100);
+        let rollIndex = this.between(1, 100);
 
         if (rollIndex > surgeList.length) {
             rollIndex -= surgeList.length;
