@@ -46,8 +46,8 @@ class Commands {
      */
     parse = (message) => {
         switch (true) {
-            case (message.content.indexOf('/roll') === 0):
-            case (message.content.indexOf('/dice') === 0):
+            case (message.content.indexOf('/roll ') === 0):
+            case (message.content.indexOf('/dice ') === 0):
                 this.cmdDice(message);
                 return;
 
