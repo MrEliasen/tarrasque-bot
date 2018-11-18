@@ -14,13 +14,13 @@ if (process.env.NODE_ENV === 'development') {
 // Create the bot
 const client = new Discord.Client();
 
-// load out commands
-const commands = new Commands();
-
 // Console log the client user when its logged in
 client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
 });
+
+// load out commands
+const commands = new Commands(client);
 
 // hand off messages on discord to the parser
 client.on('message', commands.parse);

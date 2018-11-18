@@ -7,7 +7,8 @@ class Commands {
     /**
      * Class constructor
      */
-    constructor() {
+    constructor(client) {
+        this.client = client;
     }
 
     /**
@@ -61,7 +62,28 @@ class Commands {
             case (['/surge', '/wildsurge', '/rollsurge'].includes(message.content)):
                 this.cmdSurge(message);
                 return;
+
+            case (message.channel.type === 'dm' && message.content.toLowerCase() === 'help'):
+                this.cmdHelp(message);
+                return;
         }
+    }
+
+    cmdHelp(message) {
+        const reply = `
+**Dice Roll**
+x is the number of dies to roll, and y is the type of die.
+Usage: \`/roll xdy\` or \`/roll x d y\`
+Example: \`/roll 4d6\`
+
+**Magic Surge**
+Will return a random magic surge effect.
+Usage: \`/surge\` or \`/rollsurge\`
+Example: \`/surge\`
+        `;
+
+        // Send the embed to the same channel as the message
+        message.author.send(reply);
     }
 
     cmdSurge(message) {
