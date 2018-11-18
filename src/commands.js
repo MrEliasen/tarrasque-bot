@@ -53,17 +53,19 @@ class Commands {
             }
         }
 
+        const cmd = message.content.toLowerCase();
+
         switch (true) {
-            case (message.content.indexOf('/roll ') === 0):
-            case (message.content.indexOf('/dice ') === 0):
+            case (cmd.indexOf('/roll ') === 0):
+            case (cmd.indexOf('/dice ') === 0):
                 this.cmdDice(message);
                 return;
 
-            case (['/surge', '/wildsurge', '/rollsurge'].includes(message.content)):
+            case (['/surge', '/wildsurge', '/rollsurge'].includes(cmd)):
                 this.cmdSurge(message);
                 return;
 
-            case (message.channel.type === 'dm' && message.content.toLowerCase() === 'help'):
+            case (message.channel.type === 'dm' && cmd === 'help'):
                 this.cmdHelp(message);
                 return;
         }
