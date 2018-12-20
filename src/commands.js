@@ -71,6 +71,10 @@ class Commands {
         }
     }
 
+    /**
+     * Generates the help message
+     * @param  {string} message
+     */
     cmdHelp(message) {
         const reply = `
 **Dice Roll**
